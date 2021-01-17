@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimitar A.</title>
+    <link rel="stylesheet" type="text/css" href= "style_index.css">
+</head>
+<body>
+    <div class="top-body">
+        <div class="container">
+            <div class="rect">
+                <div class="profile-pic">
+                    <img class = "image" src="images/circle-cropped.png">
+                    <div class="circle"></div>
+                </div>
+                <div class="right-side">
+                    <h1 class="title">Dimitar Atanassov</h1>
+                    <p class="subtitle">Software Engineering 1B at the <span class="uw">University of Waterloo</span></p>
+                
+                    <div class="buttons">
+                    <button class="btn" onclick="document.querySelector('.third-body').scrollIntoView();">
+                            <a>About</a>
+                    </button>
+                    <button class="btn" onClick ="document.querySelector('.second-body').scrollIntoView();">
+                        Projects
+                    </button>
+                    
+                    </div>
+                </div>
+            </div> <!--rect ends-->            
+        </div> <!--container ends-->
+    </div> <!-- TOP body ends-->
+
+    <div class="sidebar"> 
+        <nav class="nav-container">
+            <ul class = "unordered-list">
+                <div class="linked-in-container">
+                    <li id="linked-in-container">
+                        <a href = "https://www.linkedin.com/in/dimitar-atanassov-18a663203/" class="link-text"><img src = "images/linked-in-logo.png" id="linked-in-img"></a>
+                    </li>
+                </div>
+                <div class="github-container">
+                    <li id="github">
+                        
+                        <a href = "https://github.com/mitssov88/" class="link-text"><img src="images/github-logo.png" id="github-img"></a>
+                    </li>
+                </div>
+                <div class="resume-container">
+                    <li id = "resume">
+                        <!--change this to a local pdf file-->
+                        <a href="Dimitar Atanassov Resume.pdf" class="link-text"><img src="images/resume-logo.png" id="resume-img"></a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+    <div class="second-body">
+        <div class="second-container">
+            <div class="projects-container">
+                <div class="projects-heading">
+                    <h1>
+                        Projects
+                    </h1>
+                </div>
+                <div class="third-container">
+                    <div class="cards-container">
+                    <div class="card-music-visualizer">
+                        <div class="bubble-container" id="music-visualizer">
+                            <div class="bubble-picture">
+                                <video width="100%" height="100%" autoplay loop muted >
+                                    <source src="videos/MonkeS demo video2 -Fall 2020.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="music-visualizer-card-text">
+                            <h3 class="bubble-title">
+                                LED Music Visualizer
+                            </h3>
+                            <p class="bubble-subtitle">
+                                Alongside other features, can take audio input 
+                                from your favourite songs and have the LEDs on the attached strip react instantaneously! 
+                                Using an app, users can tailor the settings to their desired brightness, colour, preset 
+                                and targetted frequency band if the Music Visualization preset is chosen.
+                            </p>
+                            <h4 class="languages">
+                                C++/Arduino
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card-ambition" > 
+                        <div class="bubble-container" id="ambition">
+                            <div class="bubble-picture">
+                            </div>
+                        </div>
+                        <div class="ambition-card-text">
+                            <h3 class="bubble-title">
+                                Financial Simulator Game
+                            </h3>
+                            <p class="bubble-subtitle">
+                                Users new to the world of personal 
+                                finance and investing can take their first steps at honing their abilities 
+                                without the risk of losing real money! Be alert and ready for (simulated) life to hit 
+                                you at any moment...just as you should in reality! Unveiled at St. Francis Xavier's DECA 
+                                Ambition Conference.
+                            </p>
+                            <div class="languages-container">
+                                <h4 class="languages">
+                                    Unity/C#
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-website" >
+                        <div class="bubble-container" id="website">
+                            <div class="bubble-picture">
+                            </div>
+                        </div>
+                        <div class="website-card-text">
+                            <h3 class="bubble-title">
+                                ...This!
+                            </h3>
+                            <p class="bubble-subtitle">
+                                Although it's a work-in-progress and there is still much I want to change, developing 
+                                this personal website was the perfect opportunity for me to expose my knowledge and 
+                                current skill level when it comes to HTML,
+                                CSS, and JavaScript up 
+                                until now! 
+                            </p>
+                            <h4 class="languages">
+                                HTML CSS JavaScript
+                            </h4>
+                        </div>
+                    </div>
+                </div>         
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="third-body">
+        <div class="heading-container">
+            <h1 class="about-heading">
+                About
+            </h1>       
+        </div>
+        <div class="whisper">
+            <p>
+                Pssst...Hover over these 3 bubbles!
+            </p>
+        </div>
+        <div class="education-container">
+            <h3 class="education-heading">
+                Education
+            </h3>
+        </div>
+        <div class="education-text">
+            <p>
+                As you <span id="italics">might</span> have already guessed, I'm Dimitar Atanassov and this is my first-year 
+                at the University of Waterloo studying Software Engineering. Having the opportunity to study at such an innovative university program
+                has been my goal since early in Grade 10 as I was entering the International Baccalaureate program. At St. Francis Xavier Secondary 
+                School, I earned my I.B. Diploma in 2020, having taking Higher-Level Mathematics, Chemistry and Physics as well as Standard-Level 
+                English, Economics, and French. My involvements included being an executive of the school's Investors Club and part of multiple teams including the
+                Junior Boys Soccer and Volleyball teams.
+            </p>
+        </div>
+        <div class="education-media">            
+        </div>
+        <div class="hobbies-container">
+            <h3 class="hobbies-heading">
+                Hobbies
+            </h3>
+        </div>
+        <div class="hobbies-text">
+            <p>
+                In my free time, I love playing riffs, solos, and songs in general on my electric guitar. I discovered my love for Rock during middle school and now
+                I'm entrenched in a spectrum of subgenres and I can't go a day without listening to or playing rock music (yes I know, long hair and plays rock haha).
+                I also enjoy working on software development side projects and when I'm in the right mood, I even enjoy solving competitive programming questions! Also, I've been playing soccer
+                practically since I was born (European and loves soccer, another cliché wow I really am as unoriginal as they come) so I'm always ready to drop everything and
+                play on the spot!
+            </p>
+        </div>
+        <div class="hobbies-media">            
+        </div>
+        <div class="goals-container">
+            <h3 class="goals-heading">
+                Goals
+            </h3>
+        </div>
+        <div class="goals-text">
+            <p>
+                One month into Web development and I'm sure that this is what I will focus my efforts on for the foreseeable future as 
+                it's something I find especially satisfying and powerful. I plan on learning about many different frameworks, technologies etc.
+                such as React, MongoDB, Node.js and expanding on my knowledge of HTML, CSS and JavaScript so that I can eventually
+                become a seasoned Full-stack developer. Although I have plenty to learn and create before I reach that goal, this website is a small step forward in the right direction. 
+            </p>
+        </div>
+        <div class="goals-media">            
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script_index.js"></script>
+</body>
+</html>
