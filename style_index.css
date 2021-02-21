@@ -8,16 +8,17 @@ body{
 }
 
 .top-body{
-    font-family: Cambria, serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     min-height:100vh;
-    display:flex;
-    justify-content: center;
+    display:grid;
+    grid-template-columns: 1fr 20fr;
     align-items:center; 
+    justify-items: center;
     /*Background Pic of UW*/
     background-image: url(images/uwpic1.jpg); 
-    background-position-x:center;
+    background-position-x: center;
     background-size: cover;
-    background-position-y:center; /* OR :top; */
+    background-position-y: center;
     border-bottom: slateblue 2px solid;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -25,14 +26,15 @@ body{
 .container{
     perspective: 1000px;
     width: 60%;
+    grid-column: 1/3;
     display: flex;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
 }
 
 .rect{
     background-image: linear-gradient(white, rgb(230, 230, 230));
-    width:90%;
+    width: 90%;
     padding: 0 2rem;
     margin: 1rem;
     position:relative;
@@ -40,24 +42,25 @@ body{
     border-radius:30px;
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.2);
     display:flex;
-    justify-content: flex-start;
-    align-items: center;
     /*for ANIMATION*/
     transition-duration: 0.5s;
     transition-timing-function: ease-out;
 }
 .profile-pic{
-    width: 20vh;
+    width: 3vh;
     height: 12rem;
     min-width: 175px;
     display: flex;
+    justify-self:center;
     justify-content:center;
     align-items:center;
+    align-self:center;
 }
 .image{ 
     width: 16vh;
     min-width:8em;
     position:absolute;
+    
     z-index:2;
 }
 .circle{
@@ -104,8 +107,8 @@ body{
     }
 }
 
-.btn{
-    font-family: Cambria;
+.butn{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 20px;
     border: 1px thin black;
     padding: 5px 10px;
@@ -117,64 +120,67 @@ body{
     cursor:pointer;
     display:block;
 }
-.btn:hover{
+.butn:hover{
     background-color:slateblue;
     color:white; 
     transform: translate(0%, 0) rotateY(360deg) translate(0%, 0);
 }
 
-
 .nav-container{
     background:linear-gradient(to left, white, rgb(204, 204, 204));
-    width: 10vh;
+    width: 7vh;/*4rem;*/
+    min-width: 2.5rem;
     position: fixed;
-    left:-3.5vh;
-    top:40.25vh;
-    height: 19.5vh;
+    top: 40.25vh;
+    height: 17vh;/*10rem;*/
+    min-height: 8rem;
     z-index: 2;
+
+    display:grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 8fr 1fr;
+    align-items: center;
+    justify-content: end;
+
     transition: 0.5s ease;
     box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 .nav-container:hover{
-    background:linear-gradient(to left, white, rgb(204, 204, 204));
-    width: 10vh;
-    position: fixed;
-    left:0vh;
-    top:40.25vh;
-    height: 19.5vh;
-    z-index: 2;
-    transition: 0.5s ease;
-    
-    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    width: 9vh;
+    min-width:3rem;
 }
 .nav-container a{
     text-decoration: none;
 }
 .unordered-list{
-    padding:2vh 0.5vh;
-    margin-left:3.5vh;
+    margin:0;
+    grid-column: 1/2;
+    justify-self:end;
 }
 li{
     display:inline;
-}
+}   
 #github-img, #linked-in-img, #resume-img{
     width:5vh;
+    min-width:2rem; /*27px...don't think it did anything*/
 }
+
 .second-body{
-    font-family: Cambria, serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-image: url(images/University_of_Waterloo_seal.svg);
     background-repeat: no-repeat;
-    background-size:100vh;
-    background-position-x: -50vh;    
-    min-height:100vh;
-    display:flex;
+    background-size: 100vh;
+    background-position-x: -50vh;   
+    background-position-y: center; 
+    /*min-height: 100vh;*/
+    display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     flex-wrap: wrap; 
+    /* border-bottom: slateblue 2px solid; */
+
 }
 .second-container{
     width: 100%;
@@ -188,40 +194,67 @@ li{
 .projects-container{
     background-color:  rgba(18, 7, 31, 0.35);
     opacity:0.98;
-    width:90%;
+    width:100%;
     min-height:75vh;
     margin:auto;
     margin-top:5vh;
     margin-bottom:5vh;
     display:flex;
     flex-wrap: wrap;
-    border-radius:30px;
+    border-radius: 30px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     border: 3px solid purple;   
 }
-.projects-heading{
-    margin: 0.5%;
-    width: 22vh;
-    height: 10vh;
-}
-.projects-heading h1{
-    font-family: Cambria, serif;
-    display:flex;
-    justify-content: center;
-    margin: 10%;
-    padding: 5px 10px;
+.projects-heading{ /*MAKE A MEDIA QUERY FOR THIS TO justify-content:center ONCE IT'S SMALLER THAN SOME WIDTH*/
     background-image: linear-gradient(to left, rgb(105, 105, 226), purple);
     border-radius: 20px;
-    font-size: 3.7vh;
-    font-style:italic;
-    transition-duration: 1s;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    color:white;
+    padding: 1rem;
+    display: inline-block;
+    height: 4.5rem;
+    margin: 1rem auto;   
 }
+.about-container{
+    text-align: center;
+}
+.about-heading{ 
+    background-image: linear-gradient(to left, rgb(105, 105, 226), purple);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    display:inline-block;
+    height: auto;
+    width: auto;
+    margin: 1rem;
+}
+@media (max-width: 52em){
+    /* .projects-heading{
+        margin:auto;
+        margin-top:1rem;
+    } */
+}
+.projects-heading h1, .about-heading h1{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    font-size: 2rem;
+    margin: 0;
+    font-weight:300;
+    color:white;
+    
+}
+#title-above{
+    margin: 1rem auto 4rem;
+    width: 40%;
+}
+/* #title-below{
+    margin-bottom: 1rem;
+
+} */
+
 
 .cards-container{
     display:flex;
     padding: 2rem;
+    padding-top: 0;
     justify-content:center;
     align-items: center;
     flex-wrap: wrap;
@@ -232,13 +265,18 @@ li{
     flex-wrap:wrap;
     align-items:stretch;
     border: none;
-    margin:1vh;
-    width:40vh;
-    height:55vh;
+    margin: 1vh;
+    width: 20rem; /*OK SICK IMPROVEMENT*/
+    height: 30rem;
+    
     background: white;
     border-radius:5%;
     box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.2);
-    position:relative;   
+    position:relative; 
+    
+    /*Needed anymrore?*/
+    min-width: 150px;
+    min-height: 250px;
 }
 
 .bubble-container{
@@ -249,7 +287,6 @@ li{
 }
 .website-card-text, .ambition-card-text, .music-visualizer-card-text{
     font-family: Corbel, Cambria, serif;
-    font-size: 1.6vh;
 }
 #ambition .bubble-picture, #website .bubble-picture, #music-visualizer .bubble-picture{
     border-radius: 50%;
@@ -281,7 +318,7 @@ li{
 }
 
 .bubble-title{    
-    font-size: 2.5vh;
+    font-size: 1.4rem;
     display: block;
     text-align: center;
     margin-bottom: 0%;
@@ -293,7 +330,8 @@ li{
 .bubble-subtitle{
     margin-left:5%;
     width:90%;    
-    font-size:1.9vh;
+    font-size:1rem;
+    line-height:1.2rem;
 }
 
 .languages{
@@ -305,139 +343,97 @@ li{
     font-weight:900;
     position:absolute;
     bottom:3%;    
-    font-size: 2.5vh;
-}
-.third-body{
-    color:white;
-    font-family: Cambria, serif;
-    display:grid;
-    grid-template-columns: 5% 1fr 1fr 2fr 2fr 5%;
-    grid-template-rows: 0.5fr 0.5fr 8fr;
-    grid-template-areas: 
-    ". title . . . . " 
-    ". education education hobbies goals ." 
-    ". etext etext htext gtext .";
-    height:100vh;
-    background-image:radial-gradient(rgba(45, 55, 96, 1), rgba(11, 16, 35, 1));
-    border-top:grey 5px solid;
-    
-}
-.third-body .heading-container{
-    grid-column: 2/3;
-    grid-row: 1/2;
-}
-.third-body .about-heading{
-    font-family: Cambria, serif;
-    display:flex;
-    justify-content: center;
-    margin: 20%;
-    padding: 5px 10px;
-    background-image: linear-gradient(to left, rgb(105, 105, 226), purple);
-    border-radius: 20px;
-    font-size: 3.7vh;
-    font-style:italic;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    color:white;
-}
-.third-body .education-container{
-    background-image: linear-gradient(to left, rgb(105, 105, 226), purple);
-    background-size:0px;
-    background-repeat:no-repeat;
-    font-family: Cambria, serif;
-    margin: 20%;
-    padding: 5px 10px;
-    border-radius: 20px;
-    background-color: white;
-    font-size: 2vh;
-    font-style:italic;
-    transition: 1s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    color:black;
-    
-    grid-row:2/3;
-    grid-column:2/4;
-    justify-self: center;
-    align-self:center;
-}
-
-.education-text{
-    display:none;
-    font-family: Corbel, serif;
-    font-size:2.6vh;
-    grid-row:3/4;
-    grid-column:2/4;
-    justify-self: center;
-    
-}
-
-.hobbies-container{
-    background-image: linear-gradient(to left, rgb(105, 105, 226), purple);
-    background-size:0px;
-    background-repeat:no-repeat;
-    font-family: Cambria, serif;
-    margin: 20%;
-    padding: 5px 10px;
-    border-radius: 20px; 
-    background-color: white;
-    font-size: 2vh;
-    font-style:italic;
-    transition: 1s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    color:black;
-    
-    grid-row:2/3;
-    grid-column:4/5;
-    justify-self: center;
-    align-self:center;
-}
-.hobbies-text{
-    display:none;
-    font-family: Corbel, serif;
-    font-size:2.6vh;
-
-    grid-row:3/4;
-    grid-column:4/5;
-    justify-self: center;
-}
-.goals-container{
-    background-image: linear-gradient(to left, rgb(105, 105, 226), purple);
-    background-size:0px;
-    background-repeat:no-repeat;
-    font-family: Cambria, serif;
-    margin: 20%;
-    padding: 5px 10px;
-    border-radius: 20px; 
-    background-color: white;
-    font-size: 2vh;
-    font-style:italic;
-    transition: 1s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    color:black;
-    
-    grid-row:2/3;
-    grid-column:5/6;
-    justify-self: center;
-    align-self:center;
-}
-.goals-text{
-    display:none;
-    font-family: Corbel, serif;
-    font-size:2.6vh;
-    grid-row:3/4;
-    grid-column:5/6;
-    justify-self:center;
-}
-
-.whisper{
-    grid-column: 4/5;
-    grid-row:1/2;
-    align-self: center;
-    justify-self:center;
-    color:rgb(206, 206, 206);
-    font-style: italic;
-    transition: 1s ease;
-    font-family: Cambria, serif;
+    font-size: 1.3rem;
 }
 #italics{
     font-style:italic;
+}
+
+.featurette{
+    align-items: center;
+    text-align: center ;
+}
+.featurette-divider {
+  margin: 4rem 0; 
+  color: rgb(105, 105, 226);
+}
+
+.col-md-7{
+    align-items:center;
+}
+
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+  margin-left: 70px;
+  margin-right: 40px;
+}
+
+.lead{
+  margin: 50px 70px;
+  text-align: center;
+}
+#text-muted-purple{
+  color:purple!important;
+}
+#text-muted-blue{
+  color:rgb(105, 105, 226)!important;
+}
+.right{
+  box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+.left{
+  box-shadow: -5px 5px 20px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+
+}
+.fadingCaption{
+  text-align: left;
+  font-weight: 300;
+  color: rgb(33,37,41);
+  position: relative;
+  top:-40px;
+  color:rgb(20,20,20)
+}
+
+.captionFadeIn{
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s ease 0s, opacity 3000ms;
+}
+.captionFadeOut{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s ease 300s, opacity 600ms;
+}
+
+.featurette-image{
+  transition: ease 1000ms;
+  border-radius: 10px;
+  width:100%;
+}
+.moveRight{
+  transform: translateY(-50px);    
+}
+.moveLeft{
+  transform: translateY(-50px);
+}
+.featurette-container{
+  width:90%;
+  margin:auto;
+}
+
+@media (min-width: 40em) {
+  .featurette-heading {
+    font-size: 50px;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 1rem; 
+  }
 }

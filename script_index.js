@@ -25,59 +25,48 @@ container.addEventListener("mouseover", function(e){
     console.log(`${y_decimal}` + " %");
     const y_degrees = y_max_degrees * y_decimal;
 
-    //.container:hover .rect
     $('.container .rect').css("transform", "rotateY(" + x_degrees +"deg) rotateX(" + y_degrees +"deg)"); // Y-axis is the pivot -> use x-degrees     
 })
 container.addEventListener("mouseout", function() { // remove the e most likely
-    //document.querySelector('.rect').css.style.rotateY(0), rotateX(0); // try this way later
     $('.container .rect').css("transform", "rotateY(0deg) rotateX(0deg)"); // Y-axis is the pivot -> use x-degrees     
 })
 
 
-let education_container = document.querySelector('.education-container');
-let hobbies_container = document.querySelector('.hobbies-container');
-let goals_container = document.querySelector('.goals-container');
-
-education_container.addEventListener("mouseover", function(){
-    $('.education-text').fadeIn("slow");
-    $('.education-container').css("color", "white");
-    $('.education-container').css("background-size", "102%");
-    $('.whisper').css("transform", "translateY(-12vh)");
-    $('.whisper').fadeOut("slow");
-
-})
-education_container.addEventListener("mouseleave", function(){
-    $('.education-text').fadeOut("slow");
-    $('.education-container').css("background-color", "white");
-    $('.education-container').css("color", "black");
-    $('.education-container').css("background-size", "0");
-})
-hobbies_container.addEventListener("mouseover", function(){
-    $('.hobbies-text').fadeIn("slow");
-    $('.hobbies-container').css("color", "white");
-    $('.hobbies-container').css("background-size", "102%");
-    $('.whisper').css("transform", "translateY(-12vh)");
-    $('.whisper').fadeOut("slow");
-    
-})
-hobbies_container.addEventListener("mouseleave", function(){
-    $('.hobbies-text').fadeOut("slow");
-    $('.hobbies-container').css("background-color", "white");
-    $('.hobbies-container').css("color", "black");
-    $('.hobbies-container').css("background-size", "0");
-})
-goals_container.addEventListener("mouseover", function(){
-    $('.goals-text').fadeIn("slow");
-    $('.goals-container').css("color", "white");
-    $('.goals-container').css("background-size", "102%");
-    $('.whisper').css("transform", "translateY(-12vh)");
-    $('.whisper').fadeOut("slow");
-})
-goals_container.addEventListener("mouseleave", function(){
-    $('.goals-text').fadeOut("slow");
-    $('.goals-container').css("background-color", "white");
-    $('.goals-container').css("color", "black");
-    $('.goals-container').css("background-size", "0");
-})
-
+$(".left").hover(function(){
+    var hoveredOver =  $("#" + this.id); 
+    document.querySelector("#" + this.id).classList.toggle("moveLeft");
+    document.querySelector("#second-fadingCaption").classList.toggle("captionFadeOut");
+    document.querySelector("#second-fadingCaption").classList.toggle("captionFadeIn");
+}, function(){    
+    var hoveredOver =  $("#" + this.id); 
+    document.querySelector("#" + this.id).classList.toggle("moveLeft");
+    document.querySelector("#second-fadingCaption").classList.toggle("captionFadeIn");
+    document.querySelector("#second-fadingCaption").classList.toggle("captionFadeOut");
+});
+$(".right").hover(function(){
+    console.log($(".lead").css("font"));
+    console.log("VERSUS");
+    console.log($("figcaption").css("font"));
+    if (this.id == "first-img"){
+        document.querySelector("#first-img").classList.toggle("moveRight");
+        document.querySelector("#first-fadingCaption").classList.toggle("captionFadeOut");
+        document.querySelector("#first-fadingCaption").classList.toggle("captionFadeIn");
+    }
+    else{
+        document.querySelector("#third-img").classList.toggle("moveRight");
+        document.querySelector("#third-fadingCaption").classList.toggle("captionFadeOut");
+        document.querySelector("#third-fadingCaption").classList.toggle("captionFadeIn");
+    }
+}, function(){    
+    if (this.id == "first-img"){
+        document.querySelector("#first-img").classList.toggle("moveRight");
+        document.querySelector("#first-fadingCaption").classList.toggle("captionFadeIn");
+        document.querySelector("#first-fadingCaption").classList.toggle("captionFadeOut");
+    }
+    else{
+        document.querySelector("#third-img").classList.toggle("moveRight");
+        document.querySelector("#third-fadingCaption").classList.toggle("captionFadeIn");
+        document.querySelector("#third-fadingCaption").classList.toggle("captionFadeOut");
+    }
+});
 
